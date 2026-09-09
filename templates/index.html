@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        CAP | Cancer Awareness Platform
+    </title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+
+<header class="navbar">
+
+
+    <a href="/" class="brand">
+
+        <span class="brand-ribbon">
+            🎗️
+        </span>
+
+        <span>
+
+            <strong>
+                CAP
+            </strong>
+
+            <small>
+                Cancer Awareness Platform
+            </small>
+
+        </span>
+
+    </a>
+
+
+    <nav>
+
+        <a href="/">
+            Home
+        </a>
+
+        <a href="/self-check">
+            Body Awareness
+        </a>
+
+        <a href="/warning-signs">
+            Warning Signs
+        </a>
+
+        <a href="/myths">
+            Myths & Facts
+        </a>
+
+        <a href="/healthcare">
+            Healthcare
+        </a>
+
+    </nav>
+
+
+</header>
+
+
+
+<!-- HERO -->
+
+
+<section class="hero">
+
+
+    <div class="hero-slide slide-one active"></div>
+
+    <div class="hero-slide slide-two"></div>
+
+    <div class="hero-slide slide-three"></div>
+
+    <div class="hero-slide slide-four"></div>
+
+
+    <div class="hero-overlay"></div>
+
+
+    <button
+        class="hero-arrow left"
+        onclick="previousSlide()">
+
+        ‹
+
+    </button>
+
+
+    <button
+        class="hero-arrow right"
+        onclick="nextSlide()">
+
+        ›
+
+    </button>
+
+
+    <div class="hero-content">
+
+
+        <p class="eyebrow">
+            CANCER AWARENESS PLATFORM
+        </p>
+
+
+        <h1>
+
+            Know Your Body.
+
+            <span class="pink">
+                Spot Changes Early.
+            </span>
+
+        </h1>
+
+
+        <p class="hero-description">
+
+            Learn about cancer awareness, understand
+            important changes, and know when to seek
+            professional healthcare.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+
+            <a href="/self-check"
+               class="button primary">
+
+                Start Body Awareness →
+
+            </a>
+
+
+            <a href="/warning-signs"
+               class="button outline">
+
+                Warning Signs
+
+            </a>
+
+
+        </div>
+
+
+        <div class="slide-dots">
+
+            <span class="dot active"></span>
+
+            <span class="dot"></span>
+
+            <span class="dot"></span>
+
+            <span class="dot"></span>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="hero-message">
+
+        <span>
+            🎗️
+        </span>
+
+        <strong>
+            Awareness matters.
+        </strong>
+
+        <p>
+            Learn. Understand. Take action.
+        </p>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- INTRO -->
+
+
+<section class="section">
+
+
+    <div class="section-title">
+
+        <p class="eyebrow dark">
+            CAP
+        </p>
+
+        <h2>
+            Awareness Starts With You
+        </h2>
+
+        <p>
+            Learn what is normal for your body and understand
+            when professional advice may be needed.
+        </p>
+
+    </div>
+
+
+    <div class="home-feature-grid">
+
+
+        <a href="/self-check"
+           class="home-feature">
+
+            <span>
+                🔎
+            </span>
+
+            <h3>
+                Know Your Body
+            </h3>
+
+            <p>
+                Explore six body-awareness areas.
+            </p>
+
+        </a>
+
+
+        <a href="/warning-signs"
+           class="home-feature">
+
+            <span>
+                ⚠️
+            </span>
+
+            <h3>
+                Recognise Changes
+            </h3>
+
+            <p>
+                Understand important warning signs.
+            </p>
+
+        </a>
+
+
+        <a href="/healthcare"
+           class="home-feature">
+
+            <span>
+                🏥
+            </span>
+
+            <h3>
+                Find Healthcare
+            </h3>
+
+            <p>
+                Locate healthcare services near you.
+            </p>
+
+        </a>
+
+
+    </div>
+
+
+</section>
+
+
+
+<section class="remember">
+
+    <div class="remember-icon">
+        ℹ️
+    </div>
+
+    <div>
+
+        <h3>
+            CAP is an awareness tool
+        </h3>
+
+        <p>
+            CAP does not diagnose cancer. A new or persistent
+            change does not automatically mean cancer, but
+            concerning changes should be discussed with a
+            qualified healthcare professional.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<footer>
+
+    <strong>
+        🎗️ CAP — Cancer Awareness Platform
+    </strong>
+
+    <p>
+        Learn. Understand. Take Action.
+    </p>
+
+    <p>
+        © 2026 CAP
+    </p>
+
+</footer>
+
+
+
+<script src="{{ url_for(
+    'static',
+    filename='script.js'
+) }}"></script>
+
+
+</body>
+
+</html>

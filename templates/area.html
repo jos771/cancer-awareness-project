@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        {{ area.title }} | CAP
+    </title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+
+<header class="navbar">
+
+    <a href="/" class="brand">
+
+        <span class="brand-ribbon">
+            🎗️
+        </span>
+
+        <span>
+
+            <strong>
+                CAP
+            </strong>
+
+            <small>
+                Cancer Awareness Platform
+            </small>
+
+        </span>
+
+    </a>
+
+
+    <nav>
+
+        <a href="/">
+            Home
+        </a>
+
+        <a href="/self-check">
+            Body Awareness
+        </a>
+
+        <a href="/warning-signs">
+            Warning Signs
+        </a>
+
+        <a href="/myths">
+            Myths & Facts
+        </a>
+
+        <a href="/healthcare">
+            Healthcare
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<section class="area-header">
+
+
+    <div class="area-header-image">
+
+        <img
+            src="{{ url_for(
+                'static',
+                filename=area.image
+            ) }}"
+            alt="{{ area.title }}"
+        >
+
+    </div>
+
+
+    <div class="area-header-text">
+
+        <p class="eyebrow dark">
+            BODY AWARENESS
+        </p>
+
+        <h1>
+            {{ area.title }}
+        </h1>
+
+        <p>
+            {{ area.subtitle }}
+        </p>
+
+    </div>
+
+
+</section>
+
+
+
+<section class="content-container">
+
+
+    <div class="information-card">
+
+        <h2>
+            Why this matters
+        </h2>
+
+        <p>
+            {{ area.intro }}
+        </p>
+
+    </div>
+
+
+
+    <div class="information-card">
+
+
+        <h2>
+            Changes to be aware of
+        </h2>
+
+
+        <ul>
+
+            {% for item in area.look_for %}
+
+            <li>
+                {{ item }}
+            </li>
+
+            {% endfor %}
+
+        </ul>
+
+    </div>
+
+
+
+    <div class="action-card">
+
+        <h2>
+            What should you do?
+        </h2>
+
+        <p>
+            {{ area.what_to_do }}
+        </p>
+
+    </div>
+
+
+
+    <div class="important-card">
+
+        <div class="important-icon">
+            ℹ️
+        </div>
+
+        <div>
+
+            <h3>
+                Remember
+            </h3>
+
+            <p>
+                {{ area.note }}
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="next-step">
+
+
+        <h2>
+            Something concerns you?
+        </h2>
+
+
+        <p>
+            Don't try to diagnose yourself. Get professional
+            advice about a new, unusual or persistent change.
+        </p>
+
+
+        <a href="/healthcare"
+           class="button primary">
+
+            🏥 Find Healthcare
+
+        </a>
+
+
+    </div>
+
+
+</section>
+
+
+
+<footer>
+
+    <strong>
+        🎗️ Cancer Awareness Platform
+    </strong>
+
+    <p>
+        CAP provides education and does not diagnose cancer.
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>

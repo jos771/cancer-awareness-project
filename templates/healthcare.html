@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Find Healthcare | CAP
+    </title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+
+<header class="navbar">
+
+    <a href="/" class="brand">
+
+        <span class="brand-ribbon">
+            🎗️
+        </span>
+
+        <span>
+
+            <strong>CAP</strong>
+
+            <small>
+                Cancer Awareness Platform
+            </small>
+
+        </span>
+
+    </a>
+
+
+    <nav>
+
+        <a href="/">Home</a>
+        <a href="/self-check">Body Awareness</a>
+        <a href="/warning-signs">Warning Signs</a>
+        <a href="/myths">Myths & Facts</a>
+        <a href="/healthcare">Healthcare</a>
+
+    </nav>
+
+</header>
+
+
+
+<section class="page-hero healthcare-page">
+
+    <p class="eyebrow dark">
+        NEXT STEP
+    </p>
+
+    <h1>
+        Find Healthcare
+    </h1>
+
+    <p>
+        If something concerns you, professional healthcare
+        advice is the next step.
+    </p>
+
+</section>
+
+
+
+<section class="healthcare-container">
+
+
+    <div class="healthcare-card">
+
+
+        <div class="hospital-icon">
+            🏥
+        </div>
+
+
+        <h2>
+            Find healthcare near you
+        </h2>
+
+
+        <p>
+            Allow CAP to use your location,and we'll open
+            Google Maps with a nearby healthcare search.
+        </p>
+
+
+        <button
+            class="button primary"
+            onclick="findHealthcare()">
+
+            📍 Use My Location
+
+        </button>
+
+
+        <div id="location-status">
+
+            Your location has not been provided.
+
+        </div>
+
+
+        <a
+            id="maps-link"
+            href="#"
+            target="_blank"
+            rel="noopener"
+            class="button maps-button hidden">
+
+            🗺️ Open Healthcare Search
+
+        </a>
+
+
+    </div>
+
+
+
+    <div class="privacy-card">
+
+        <h3>
+            🔒 Privacy
+        </h3>
+
+        <p>
+            CAP only requests your location when you press
+            the location button. This page does not send
+            your coordinates to our Flask server.
+        </p>
+
+    </div>
+
+
+
+    <div class="information-card healthcare-note">
+
+        <h2>
+            If you need urgent medical help
+        </h2>
+
+        <p>
+            Do not wait for CAP or an online tool. Contact your
+            local emergency service or go to the nearest
+            appropriate healthcare facility.
+        </p>
+
+    </div>
+
+
+</section>
+
+
+
+<footer>
+
+    <strong>
+        🎗️ CAP — Cancer Awareness Platform
+    </strong>
+
+    <p>
+        Your health and privacy matter.
+    </p>
+
+</footer>
+
+
+
+<script>
+
+function findHealthcare() {
+
+    const status =
+        document.getElementById("location-status");
+
+    const maps =
+        document.getElementById("maps-link");
+
+
+    if (!navigator.geolocation) {
+
+        status.innerText =
+            "Your browser does not support location services.";
+
+        return;
+    }
+
+
+    status.innerText =
+        "Requesting your location...";
+
+
+    navigator.geolocation.getCurrentPosition(
+
+        function(position) {
+
+            const latitude =
+                position.coords.latitude;
+
+            const longitude =
+                position.coords.longitude;
+
+
+            const mapsURL =
+                "https://www.google.com/maps/search/" +
+                "hospital+clinic+healthcare/" +
+                "@" +
+                latitude +
+                "," +
+                longitude +
+                ",14z";
+
+
+            maps.href = mapsURL;
+
+            maps.classList.remove("hidden");
+
+
+            status.innerText =
+                "Location received. Open the healthcare search below.";
+
+        },
+
+
+        function(error) {
+
+            if (error.code === 1) {
+
+                status.innerText =
+                    "Location permission was denied. " +
+                    "You can still search manually on Google Maps.";
+
+            } else {
+
+                status.innerText =
+                    "We couldn't get your location. " +
+                    "Please try again.";
+
+            }
+
+        }
+
+    );
+
+}
+
+</script>
+
+
+</body>
+
+</html>
